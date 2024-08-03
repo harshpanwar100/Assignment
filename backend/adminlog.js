@@ -5,7 +5,7 @@ const Admin = require("../models/Admin");
 const Car = require("../models/Car");
 const User = require("../models/User");
 
-mongoose.connect('mongodb+srv://harshpanwar3600:doodu01@cluster0.ve5v2cz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{
+mongoose.connect(process.env.MONGODB_URI ||'mongodb+srv://harshpanwar3600:doodu01@cluster0.ve5v2cz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{
     useNewUrlParser: true,
    useUnifiedTopology: true
 }).then(()=>{
