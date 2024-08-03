@@ -15,6 +15,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.static('view'));
 
+mongoose.connect(process.env.MONGODB_URI ||'mongodb+srv://harshpanwar3600:doodu01@cluster0.ve5v2cz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{
+    useNewUrlParser: true,
+   useUnifiedTopology: true
+}).then(()=>{
+    console.log('mongoDB is connnected');
+}).catch((err)=>{
+    console.log('mongoDB failed to connect',err);
+});
 
 const PORT = process.env.PORT || 5000;
 
